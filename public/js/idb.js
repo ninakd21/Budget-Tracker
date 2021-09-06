@@ -60,7 +60,7 @@ function uploadBudget() {
           const transaction = db.transaction(['new_transaction'], 'readwrite');
           const budgetObjectStore = transaction.objectStore('new_transaction');
           // clear all items in your store
-          pizzaObjectStore.clear();
+          budgetObjectStore.clear();
         })
         .catch(err => {
           // set reference to redirect back here
