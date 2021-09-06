@@ -1,9 +1,17 @@
-const path = require('path');
+const webpack = require("webpack")
+const path = require("path");
+
 module.exports = {
   entry: './Develop/public/js/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'main.bundle.js'
+    path: path.join(__dirname + "/dist"),
+    filename: "main.bundle.js"
   },
-  mode: 'development'
+  plugins: [
+  new webpack.ProvidePlugin({
+    $: "jquery",
+    jQuery: "jquery"
+  }),
+  ],
+  mode: "development"
 };
